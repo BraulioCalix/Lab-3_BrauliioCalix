@@ -95,21 +95,23 @@ int main(){
 
 				switch (menu){
 					case 1:{
-						
-						string codigo= "";
+						string Anio="";	 
+						string codigo = "";
 						cout << "ingrese el codigo de la guerra" <<endl;
 						cin >> codigo;
-						string nombre="";
+						string nombre ="";
 						cout << "ingrese el nombre de la guerra" << endl;
-						string Anio=0;//anio inicio
-						cout << "ingrese el año de inicio: "<<endl;
+						cin >> nombre;
+						cout << "hola" << endl;
+						
+						cout << "ingrese el año de inicio: " <<endl;
 						cin >> Anio;
-						string Afin=0 ; //Año final
+						string Afin = ""; //Año final
 						cout << "ingrese el año final " << endl;
 						cin >> Afin;
-						string pais="";
+						string pais = "";
 						string paises="";
-						int sigue =1;
+						int sigue = 1;
 						while (sigue == 1){
 							cout << "ingrese un pais participante: " <<endl;
 							cin >> pais;
