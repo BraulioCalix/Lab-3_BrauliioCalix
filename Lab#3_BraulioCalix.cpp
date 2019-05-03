@@ -146,11 +146,22 @@ int main(){
 								}//fin for interno 2
 								if(tampint==codigo){
 									encontro=true;
-
+									posicion =i;
 								}	
 							}//fin for interno	
 						}//fin for externo
-					
+						if(encontro==true){
+							string tempo= array.at(posicion);
+							for(int i=0; i<tempo.length();i++){
+								if(tempo[i]!=';'){
+								cout << tempo[i];
+								}else{
+								cout << " " ;
+								}
+							}
+						}else{
+						cout<< "no lo encontro"<< endl;
+						}
 
 					       }break;
 					case 3:{
