@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstring>
 #include <cstdlib>
 #include <vector>
 using namespace std;
@@ -83,8 +84,82 @@ int main(){
 				libera(arreglo);				
 			       }break;
 			case 3:{
-											
-			       }break;
+				vector <string> array;
+				cout << "ingrese que desea hacer" << endl;
+				cout << "1) insertar guerra " <<endl;
+				cout << "2) buscar guerra " << endl;
+				cout << "3) eliminar guerra"<< endl;
+				cout << "4) listar guerras"<< endl;
+				int menu = 0;
+				cin >> menu;
+
+				switch (menu){
+					case 1:{
+						
+						string codigo= "";
+						cout << "ingrese el codigo de la guerra" <<endl;
+						cin >> codigo;
+						string nombre="";
+						cout << "ingrese el nombre de la guerra" << endl;
+						string Anio=0;//anio inicio
+						cout << "ingrese el año de inicio: "<<endl;
+						cin >> Anio;
+						string Afin=0 ; //Año final
+						cout << "ingrese el año final " << endl;
+						cin >> Afin;
+						string pais="";
+						string paises="";
+						int sigue =1;
+						while (sigue == 1){
+							cout << "ingrese un pais participante: " <<endl;
+							cin >> pais;
+							paises+="," + pais;
+							cout << "desea agregar otro pais? 1) si 2) no" << endl;
+							cin >>sigue;
+						}//fin while paises
+						string continente= "";
+						cout << "ingres el contienete" <<endl;
+						cin >> continente;
+						string agregar="";
+						agregar+= codigo + nombre + Anio + Afin + paises + continente;
+					       	array.push_back(agregar);
+					       }break;
+					case 2:{
+						       
+						string codigo ="";
+						cout << "ingrese el codigo de la cadena " << endl;
+						cin >> codigo;
+						int posicion=0;
+						string temp="";
+						string tampint="";
+						bool encontro=false;
+						for(int i = 0; i < array.size() ; i++){
+							for(int j=0; i< array.at(i).size();i++){
+								temp=array.at(i);
+								for(int k=0; k < temp.length();k++){
+									
+									if(temp[k]!=';'){
+									tampint+=temp[k];
+									}else{
+										break;
+									}	
+								}//fin for interno 2
+								if(tampint==codigo){
+									encontro=true;
+
+								}	
+							}//fin for interno	
+						}//fin for externo
+					
+
+					       }break;
+					case 3:{
+					       }break;
+
+					       
+				
+				}//fin switch interno				
+			       }break;//break del caso 3
 			default:{
 					cout << "ingreso un valor invalido "<<endl;
 				}break;
